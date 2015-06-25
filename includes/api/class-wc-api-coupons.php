@@ -496,7 +496,7 @@ class WC_API_Coupons extends WC_API_Resource {
 			'post_status' => 'publish',
 			/* Hardcoded filters */
 			'meta_key' => isset($args['meta_key']) ? $args['meta_key'] : '',
-			'meta_value' => isset($args['meta_value']) ? $args['meta_value'] : '',
+			'meta_value' => isset($args['meta_value']) ? ($args['meta_value'] == '0' ? ' ' : $args['meta_value']) : '',
 		);
 
 		$query_args = $this->merge_query_args( $query_args, $args );
